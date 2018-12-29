@@ -24,9 +24,6 @@ export class NgxuxMatVerticalToolbarService {
 
     /**
      * Internal function used to propogate click events to the observable.
-     *
-     * @param {NgxuxMatVerticalToolbarItem} menuItem
-     *
      */
     public onClick(menuItem: NgxuxMatVerticalToolbarItem): void {
 

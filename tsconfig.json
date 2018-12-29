@@ -71,6 +71,18 @@
       ],
       "ngxux-mat-header-nav/*": [
         "dist/ngxux-mat-header-nav/*"
+      ],
+      "ngux-admin-users-mgmt": [
+        "dist/ngux-admin-users-mgmt"
+      ],
+      "ngux-admin-users-mgmt/*": [
+        "dist/ngux-admin-users-mgmt/*"
+      ],
+      "ngxux-common": [
+        "dist/ngxux-common"
+      ],
+      "ngxux-common/*": [
+        "dist/ngxux-common/*"
       ]
     }
   }
