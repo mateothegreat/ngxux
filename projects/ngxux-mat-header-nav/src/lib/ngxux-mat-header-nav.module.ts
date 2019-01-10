@@ -17,7 +17,7 @@ import { NgxuxMatHeaderNavComponent }     from './ngxux-mat-header-nav.component
         CommonModule,
         MatButtonModule,
         MatTabsModule,
-        RouterModule.forRoot([])
+        RouterModule
 
     ],
 

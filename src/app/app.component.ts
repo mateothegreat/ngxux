@@ -1,6 +1,8 @@
 import { Component }                      from '@angular/core';
 import { NgxuxMatDialogService }          from '../../projects/ngxux-mat-dialog/src/lib/ngxux-mat-dialog.service';
 import { TableColumn }                    from '../../projects/ngxux-mat-table/src/lib/table-column';
+import { NgxuxMatToolbarItem }            from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar-item';
+import { NgxuxMatToolbarService }         from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar.service';
 import { NgxuxMatVerticalToolbarItem }    from '../../projects/ngxux-mat-vertical-toolbar/src/lib/ngxux-mat-vertical-toolbar-item';
 import { NgxuxMatVerticalToolbarService } from '../../projects/ngxux-mat-vertical-toolbar/src/lib/ngxux-mat-vertical-toolbar.service';
 
@@ -51,7 +53,15 @@ export class AppComponent {
     ];
 
     public constructor(private ngxuxMatVerticalToolbarService: NgxuxMatVerticalToolbarService,
-                       private ngxuxMatDialogService: NgxuxMatDialogService) {
+                       private ngxuxMatDialogService: NgxuxMatDialogService,
+                       private ngxuxMatToolbarService: NgxuxMatToolbarService) {
+
+        ngxuxMatToolbarService.menuItems = [
+
+            new NgxuxMatToolbarItem({ icon: 'home', path: '/home', tooltip: 'Go home!', color: '#fff', hoverColor: 'red' }),
+            new NgxuxMatToolbarItem({ icon: 'settings', path: '/settings', tooltip: 'Go settings!' }),
+
+        ];
 
         ngxuxMatVerticalToolbarService.leftMenuItems = [
 

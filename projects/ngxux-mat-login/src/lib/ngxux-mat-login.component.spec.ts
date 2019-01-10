@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NguxAdminUsersMgmtComponent } from './ngux-admin-users-mgmt.component';
+import { NgxuxMatLoginComponent } from './ngxux-mat-login.component';
 
-describe('NguxAdminUsersMgmtComponent', () => {
-  let component: NguxAdminUsersMgmtComponent;
-  let fixture: ComponentFixture<NguxAdminUsersMgmtComponent>;
+describe('NgxuxMatLoginComponent', () => {
+  let component: NgxuxMatLoginComponent;
+  let fixture: ComponentFixture<NgxuxMatLoginComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NguxAdminUsersMgmtComponent ]
+      declarations: [ NgxuxMatLoginComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NguxAdminUsersMgmtComponent);
+    fixture = TestBed.createComponent(NgxuxMatLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

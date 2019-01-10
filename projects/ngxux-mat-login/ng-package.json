@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ngux-admin-users-mgmt",
+  "dest": "../../dist/ngxux-mat-login",
   "lib": {
     "entryFile": "src/public_api.ts"
   }

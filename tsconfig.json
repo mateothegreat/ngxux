@@ -83,6 +83,12 @@
       ],
       "ngxux-common/*": [
         "dist/ngxux-common/*"
+      ],
+      "ngxux-mat-login": [
+        "dist/ngxux-mat-login"
+      ],
+      "ngxux-mat-login/*": [
+        "dist/ngxux-mat-login/*"
       ]
     }
   }

@@ -1,0 +1,61 @@
+:host {
+    
+    .wrapper {
+        
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .container {
+            
+            width: 300px;
+            
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            
+            
+            background: #f1f1f1;
+            
+            .title {
+                
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                
+                padding: 20px;
+                
+            }
+            
+            .form {
+                
+                padding: 20px;
+                
+                .message {
+                    
+                    margin-bottom: 20px;
+                    
+                    
+                }
+                
+            }
+            
+            .buttons {
+                
+                display: flex;
+                justify-content: flex-end;
+                
+                padding: 15px;
+                
+            }
+            
+        }
+        
+    }
+    
+}

@@ -15,7 +15,7 @@ import { NgxuxMatVerticalToolbarComponent } from './ngxux-mat-vertical-toolbar.c
     imports: [
 
         CommonModule,
-        RouterModule.forRoot([]),
+        RouterModule,
 
         MatIconModule
 
