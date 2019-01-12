@@ -22,6 +22,7 @@
             <div class="content">
 
                 <ngxux-mat-header-nav title="Manage Accounts"
+                                      detail="Some detail message."
                                       (buttonClick)="onButtonClick($event)"
                                       [buttons]="[
 
@@ -51,7 +52,11 @@ path: '/settings/assessments/questions'
 
 }
 
-]"></ngxux-mat-header-nav>
+]" contentPosition="top">
+
+                    <app-test-widget></app-test-widget>
+
+                </ngxux-mat-header-nav>
 
                 <div class="table mat-elevation-z5">
 

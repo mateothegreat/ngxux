@@ -40,6 +40,15 @@
                     
                 }
                 
+                .detail {
+                    
+                    margin-top: 5px;
+                    font-size: 14px;
+                    
+                    color: $theme-layout-page-header-color;
+                    
+                }
+                
             }
             
             .right {
@@ -48,14 +57,35 @@
                 
                 display: flex;
                 justify-content: flex-end;
+                flex-direction: column;
                 
                 padding: 20px;
                 
-                button {
+                .buttons {
                     
-                    margin-left: 20px;
+                    display: flex;
+                    justify-content: flex-end;
+                    
+                    button {
+                        
+                        margin-left: 20px;
+                        
+                    }
                     
                 }
+                
+                .ngcontent {
+                    
+                    display: flex;
+                    justify-content: flex-end;
+                    
+                }
+                
+            }
+            
+            .right-reversed {
+                
+                flex-direction: column-reverse;
                 
             }
             

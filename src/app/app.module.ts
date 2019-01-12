@@ -12,6 +12,7 @@ import { NgxuxMatVerticalToolbarModule } from '../../projects/ngxux-mat-vertical
 
 import { AppComponent }        from './app.component';
 import { TestDialogComponent } from './test-dialog/test-dialog.component';
+import { TestWidgetComponent } from './test-widget/test-widget.component';
 
 @NgModule({
 
@@ -19,7 +20,9 @@ import { TestDialogComponent } from './test-dialog/test-dialog.component';
 
         AppComponent,
 
-        TestDialogComponent
+        TestDialogComponent,
+
+        TestWidgetComponent
 
     ],
 

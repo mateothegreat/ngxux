@@ -1,6 +1,7 @@
+// @dynamic
 export class Numbers {
-    
-    public static getNumber(target: any) {
+
+    public static getNumber(target: any): number {
 
         const parsed = parseInt(target);
 
@@ -13,7 +14,13 @@ export class Numbers {
             return parsed;
 
         }
-        
+
+    }
+
+    public static numberWithCommas(x): string {
+
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
     }
 
 }
