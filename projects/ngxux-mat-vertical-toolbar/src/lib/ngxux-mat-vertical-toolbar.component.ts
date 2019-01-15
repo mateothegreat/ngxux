@@ -30,6 +30,7 @@ import { NgxuxMatVerticalToolbarService } from './ngxux-mat-vertical-toolbar.ser
                      (click)="ngxuxMatVerticalToolbarService.onClick(item)"
                      class="item"
                      routerLinkActive="active"
+                     [matTooltip]="item.tooltip"
                      [routerLink]="[ item.path ]">
 
                     <mat-icon class="icon">{{ item.icon }}</mat-icon>

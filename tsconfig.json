@@ -89,6 +89,12 @@
       ],
       "ngxux-mat-login/*": [
         "dist/ngxux-mat-login/*"
+      ],
+      "ngxux-datatable": [
+        "dist/ngxux-datatable"
+      ],
+      "ngxux-datatable/*": [
+        "dist/ngxux-datatable/*"
       ]
     }
   }

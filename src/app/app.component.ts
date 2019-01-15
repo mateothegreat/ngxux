@@ -1,4 +1,5 @@
 import { Component }                      from '@angular/core';
+import { PageEvent }                      from '@angular/material';
 import { NgxuxMatDialogService }          from '../../projects/ngxux-mat-dialog/src/lib/ngxux-mat-dialog.service';
 import { TableColumn }                    from '../../projects/ngxux-mat-table/src/lib/table-column';
 import { NgxuxMatToolbarItem }            from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar-item';
@@ -93,6 +94,12 @@ export class AppComponent {
     }
 
     public rowClicked(e: any): void {
+
+        console.log(e);
+
+    }
+
+    public onPageNavigationClick(e: PageEvent): void {
 
         console.log(e);
 

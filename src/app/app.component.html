@@ -68,6 +68,7 @@ path: '/settings/assessments/questions'
                                      [removeShow]="true"
                                      [headerSticky]="true"
                                      (rowClick)="rowClicked($event)"
+                                     (pageNavigationClick)="onPageNavigationClick($event)"
                                      [data]="data"></ngxux-mat-table>
 
                 </div>

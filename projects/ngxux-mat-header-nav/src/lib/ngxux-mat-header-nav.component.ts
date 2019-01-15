@@ -40,6 +40,7 @@ import { NgxuxMatHeaderNavButton }                from './ngxux-mat-header-nav-b
 
                         <button *ngFor="let button of buttons"
                                 [routerLink]="button.path ? [ button.path ] : null"
+                                routerLinkActive
                                 (click)="onButtonClick(button)"
                                 mat-raised-button>
 

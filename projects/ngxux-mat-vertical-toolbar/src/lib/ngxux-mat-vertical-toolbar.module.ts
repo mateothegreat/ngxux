@@ -1,6 +1,6 @@
 import { CommonModule }                     from '@angular/common';
 import { NgModule }                         from '@angular/core';
-import { MatIconModule }                    from '@angular/material';
+import { MatIconModule, MatTooltipModule }  from '@angular/material';
 import { RouterModule }                     from '@angular/router';
 import { NgxuxMatVerticalToolbarComponent } from './ngxux-mat-vertical-toolbar.component';
 
@@ -17,7 +17,8 @@ import { NgxuxMatVerticalToolbarComponent } from './ngxux-mat-vertical-toolbar.c
         CommonModule,
         RouterModule,
 
-        MatIconModule
+        MatIconModule,
+        MatTooltipModule
 
     ],
 

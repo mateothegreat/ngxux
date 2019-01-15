@@ -23,6 +23,8 @@
         "@angular/platform-browser": "~7.0.0",
         "@angular/platform-browser-dynamic": "~7.0.0",
         "@angular/router": "~7.0.0",
+        "@ngxux/common": "0.0.6",
+        "@swimlane/ngx-datatable": "^14.0.0",
         "@types/jest": "^23.3.10",
         "core-js": "^2.5.4",
         "rxjs": "~6.3.3",
