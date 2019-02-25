@@ -635,6 +635,76 @@
           }
         }
       }
+    },
+    "ngxux-details-dialog": {
+      "root": "projects/ngxux-details-dialog",
+      "sourceRoot": "projects/ngxux-details-dialog/src",
+      "projectType": "library",
+      "prefix": "ngxux",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngxux-details-dialog/tsconfig.lib.json",
+            "project": "projects/ngxux-details-dialog/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngxux-details-dialog/src/test.ts",
+            "tsConfig": "projects/ngxux-details-dialog/tsconfig.spec.json",
+            "karmaConfig": "projects/ngxux-details-dialog/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngxux-details-dialog/tsconfig.lib.json",
+              "projects/ngxux-details-dialog/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngxux-user-management": {
+      "root": "projects/ngxux-user-management",
+      "sourceRoot": "projects/ngxux-user-management/src",
+      "projectType": "library",
+      "prefix": "ngxux",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngxux-user-management/tsconfig.lib.json",
+            "project": "projects/ngxux-user-management/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngxux-user-management/src/test.ts",
+            "tsConfig": "projects/ngxux-user-management/tsconfig.spec.json",
+            "karmaConfig": "projects/ngxux-user-management/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngxux-user-management/tsconfig.lib.json",
+              "projects/ngxux-user-management/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngxux"

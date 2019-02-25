@@ -21,57 +21,22 @@
 
             <div class="content">
 
-                <ngxux-mat-header-nav title="Manage Accounts"
-                                      detail="Some detail message."
-                                      (buttonClick)="onButtonClick($event)"
-                                      [buttons]="[
+                <router-outlet></router-outlet>
 
-{
+                <!--<div class="table mat-elevation-z5">-->
 
-label: 'Create User'
+                <!--<ngxux-mat-table title="My Table"-->
+                <!--[headerShow]="true"-->
+                <!--[columns]="columns"-->
+                <!--[searchShow]="true"-->
+                <!--[addShow]="true"-->
+                <!--[removeShow]="true"-->
+                <!--[headerSticky]="true"-->
+                <!--(rowClick)="rowClicked($event)"-->
+                <!--(pageNavigationClick)="onPageNavigationClick($event)"-->
+                <!--[data]="data"></ngxux-mat-table>-->
 
-}, {
-
-label: 'Create Admin'
-
-}
-
-]"
-
-                                      [tabs]="[
-
-{
-
-label: 'Users',
-path: '/settings/assessments/manage'
-
-}, {
-
-label: 'Administrators',
-path: '/settings/assessments/questions'
-
-}
-
-]" contentPosition="top">
-
-                    <app-test-widget></app-test-widget>
-
-                </ngxux-mat-header-nav>
-
-                <div class="table mat-elevation-z5">
-
-                    <ngxux-mat-table title="My Table"
-                                     [headerShow]="true"
-                                     [columns]="columns"
-                                     [searchShow]="true"
-                                     [addShow]="true"
-                                     [removeShow]="true"
-                                     [headerSticky]="true"
-                                     (rowClick)="rowClicked($event)"
-                                     (pageNavigationClick)="onPageNavigationClick($event)"
-                                     [data]="data"></ngxux-mat-table>
-
-                </div>
+                <!--</div>-->
 
             </div>
 

@@ -1,0 +1,83 @@
+<ngxux-mat-dialog id="create-user"
+                  [nextEnabled]="formGroup.valid"
+                  (nextClick)="onNextClick()">
+
+    <div class="wrapper">
+
+        <form [formGroup]="formGroup">
+
+            <table>
+
+                <tr>
+
+                    <td colspan="2">
+
+                        <mat-form-field floatLabel="always">
+
+                            <input matInput
+                                   required
+                                   formControlName="email"
+                                   placeholder="Email Address">
+
+                        </mat-form-field>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <mat-form-field floatLabel="always">
+
+                            <input matInput
+                                   required
+                                   type="password"
+                                   formControlName="password"
+                                   placeholder="Password">
+
+                        </mat-form-field>
+
+                    </td>
+
+                    <td>
+
+                        <mat-form-field floatLabel="always">
+
+                            <input matInput
+                                   required
+                                   type="password"
+                                   formControlName="password2"
+                                   placeholder="Verify Password">
+
+                        </mat-form-field>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td colspan="2">
+
+                        Admin?
+
+                        <mat-button-toggle-group>
+
+                            <mat-button-toggle value="false">Disabled</mat-button-toggle>
+                            <mat-button-toggle value="true">Enabled</mat-button-toggle>
+
+                        </mat-button-toggle-group>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+
+</ngxux-mat-dialog>

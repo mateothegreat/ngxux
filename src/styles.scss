@@ -33,6 +33,12 @@ mat-drawer-content {
     
 }
 
+.mat-raised-button[disabled] {
+    
+    background-color: #888 !important;
+    
+}
+
 /**
  *
  * Vertical Toolbar (either on the left or right)

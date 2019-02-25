@@ -1,5 +1,7 @@
-import { Component }                      from '@angular/core';
+import { Component, OnInit }              from '@angular/core';
 import { PageEvent }                      from '@angular/material';
+import { NgxuxDetailsDialogDataService }  from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog-data.service';
+import { NgxuxDetailsDialogService }      from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog.service';
 import { NgxuxMatDialogService }          from '../../projects/ngxux-mat-dialog/src/lib/ngxux-mat-dialog.service';
 import { TableColumn }                    from '../../projects/ngxux-mat-table/src/lib/table-column';
 import { NgxuxMatToolbarItem }            from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar-item';
@@ -12,7 +14,7 @@ import { NgxuxMatVerticalToolbarService } from '../../projects/ngxux-mat-vertica
     templateUrl: './app.component.html',
     styleUrls: [ './app.component.scss' ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
     public columns: Array<TableColumn> = [ {
 
@@ -55,7 +57,9 @@ export class AppComponent {
 
     public constructor(private ngxuxMatVerticalToolbarService: NgxuxMatVerticalToolbarService,
                        private ngxuxMatDialogService: NgxuxMatDialogService,
-                       private ngxuxMatToolbarService: NgxuxMatToolbarService) {
+                       private ngxuxMatToolbarService: NgxuxMatToolbarService,
+                       private ngxuxDetailsDialogService: NgxuxDetailsDialogService,
+                       private ngxuxDetailsDialogDataService: NgxuxDetailsDialogDataService) {
 
         ngxuxMatToolbarService.menuItems = [
 
@@ -90,6 +94,24 @@ export class AppComponent {
         //     nextLabel: 'Save!'
         //
         // }));
+
+    }
+
+    public ngOnInit(): void {
+
+        // this.ngxuxDetailsDialogService.open({
+        //
+        //     title: 'Enter some details'
+        //
+        // });
+        //
+        // this.ngxuxDetailsDialogDataService.click$.subscribe((result: NgxuxDetails) => {
+        //
+        //     console.log(result);
+        //
+        //     this.ngxuxDetailsDialogService.close();
+        //
+        // });
 
     }
 
