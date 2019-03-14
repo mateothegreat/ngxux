@@ -72,6 +72,7 @@ export class AppComponent implements OnInit {
 
             new NgxuxMatVerticalToolbarItem({ icon: 'home', path: '/home', tooltip: 'Go home!' }),
             new NgxuxMatVerticalToolbarItem({ icon: 'settings', path: '/settings', tooltip: 'Go settings!' }),
+            new NgxuxMatVerticalToolbarItem({ icon: 'supervised_user_circle', path: '/settings/users', tooltip: 'Go settings!' }),
 
         ];
 

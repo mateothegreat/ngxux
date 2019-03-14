@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxuxDatatableComponent } from './ngxux-datatable.component';
+import { NgxuxUsersComponent } from './ngxux-users.component';
 
-describe('NgxuxDatatableComponent', () => {
-  let component: NgxuxDatatableComponent;
-  let fixture: ComponentFixture<NgxuxDatatableComponent>;
+describe('NgxuxUsersComponent', () => {
+  let component: NgxuxUsersComponent;
+  let fixture: ComponentFixture<NgxuxUsersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxuxDatatableComponent ]
+      declarations: [ NgxuxUsersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxuxDatatableComponent);
+    fixture = TestBed.createComponent(NgxuxUsersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

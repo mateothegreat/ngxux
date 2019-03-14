@@ -4,6 +4,8 @@
 
 export * from './lib/AuthGuard';
 export * from './lib/AutofocusDirective';
+export * from './lib/HttpErrorInterceptor';
+export * from './lib/JwtInterceptor';
 export * from './lib/Numbers';
 export * from './lib/Pageable';
 export * from './lib/PageRequest';

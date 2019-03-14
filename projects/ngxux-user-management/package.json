@@ -1,12 +1,9 @@
 {
-
     "name": "@ngxux/user-management",
-    "version": "0.0.1",
+    "version": "0.0.9",
     "peerDependencies": {
-
         "@angular/common": "^7.2.0",
-        "@angular/core": "^7.2.0"
-
+        "@angular/core": "^7.2.0",
+        "@ngxux/ngxux-mat-header-nav": "0.0.6"
     }
-
 }

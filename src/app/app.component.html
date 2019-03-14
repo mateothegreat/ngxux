@@ -19,6 +19,14 @@
                                title="ACME, Inc."
                                subtitle="Administration"></ngxux-mat-toolbar>
 
+
+            <ngxux-section-header title="Some Section Title"
+                                  description="adsf asd fa sd fasdfasdf"
+                                  [buttons]="[
+                                  { key: 'somekey', label: 'some label', color: 'warn' },
+                                  { key: 'somekey', label: 'some label', color: 'primary' }
+                                  ]"></ngxux-section-header>
+
             <div class="content">
 
                 <router-outlet></router-outlet>

@@ -108,6 +108,18 @@
       ],
       "ngxux-user-management/*": [
         "dist/ngxux-user-management/*"
+      ],
+      "ngxux-users": [
+        "dist/ngxux-users"
+      ],
+      "ngxux-users/*": [
+        "dist/ngxux-users/*"
+      ],
+      "ngxux-section-header": [
+        "dist/ngxux-section-header"
+      ],
+      "ngxux-section-header/*": [
+        "dist/ngxux-section-header/*"
       ]
     }
   }

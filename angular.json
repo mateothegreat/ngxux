@@ -705,6 +705,76 @@
           }
         }
       }
+    },
+    "ngxux-users": {
+      "root": "projects/ngxux-users",
+      "sourceRoot": "projects/ngxux-users/src",
+      "projectType": "library",
+      "prefix": "ngxux",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngxux-users/tsconfig.lib.json",
+            "project": "projects/ngxux-users/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngxux-users/src/test.ts",
+            "tsConfig": "projects/ngxux-users/tsconfig.spec.json",
+            "karmaConfig": "projects/ngxux-users/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngxux-users/tsconfig.lib.json",
+              "projects/ngxux-users/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngxux-section-header": {
+      "root": "projects/ngxux-section-header",
+      "sourceRoot": "projects/ngxux-section-header/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngxux-section-header/tsconfig.lib.json",
+            "project": "projects/ngxux-section-header/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngxux-section-header/src/test.ts",
+            "tsConfig": "projects/ngxux-section-header/tsconfig.spec.json",
+            "karmaConfig": "projects/ngxux-section-header/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngxux-section-header/tsconfig.lib.json",
+              "projects/ngxux-section-header/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngxux"
