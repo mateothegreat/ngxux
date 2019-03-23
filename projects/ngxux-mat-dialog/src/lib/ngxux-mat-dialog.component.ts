@@ -89,7 +89,7 @@ export class NgxuxMatDialogComponent {
     @Output() public deleteClick = new EventEmitter();
 
     @Input() public id: string;
-    @Input() public nextEnabled: boolean;
+    @Input() public nextEnabled: boolean = false;
 
     public constructor(public ngxuxMatDialogService: NgxuxMatDialogService) {
 
