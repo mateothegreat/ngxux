@@ -126,6 +126,12 @@
       ],
       "ngxux-camera-capture/*": [
         "dist/ngxux-camera-capture/*"
+      ],
+      "ngxux-file-uploader": [
+        "dist/ngxux-file-uploader"
+      ],
+      "ngxux-file-uploader/*": [
+        "dist/ngxux-file-uploader/*"
       ]
     }
   }

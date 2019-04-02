@@ -1,3 +1,4 @@
+import { HttpHeaders }                     from '@angular/common/http';
 import { Component, OnInit }               from '@angular/core';
 import { PageEvent }                       from '@angular/material';
 import { NgxuxCameraCaptureDialogService } from '../../projects/ngxux-camera-capture/src/lib/ngxux-camera-capture-dialog.service';
@@ -55,6 +56,14 @@ export class AppComponent implements OnInit {
         { name: 'asdf', id: '123' },
 
     ];
+
+    public uploadUrl: string = `http://localhost:10081/attachments/upload`;
+    // public headers: HttpHeaders = new HttpHeaders().set('Authorization', `Bearer ${ AuthenticationService.getToken() }`);
+    public headers: HttpHeaders = {
+        // @ts-ignore
+        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwiZXhwIjoxNTU1MDA0MjUzfQ.EVFFDbq9FyQJ1qHSpcecQf28IoVTdxYXKzydVVbUgic6tWGp-TKjwLLz5Iw7njIAjC3L6eLjNmDTmUMBAjlhsA'
+    };
+
 
     public constructor(private ngxuxMatVerticalToolbarService: NgxuxMatVerticalToolbarService,
                        private ngxuxMatDialogService: NgxuxMatDialogService,

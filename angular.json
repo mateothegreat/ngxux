@@ -776,7 +776,7 @@
         }
       }
     },
-    "NgxuxCameraCapture": {
+    "ngxux-camera-capture": {
       "root": "projects/ngxux-camera-capture",
       "sourceRoot": "projects/ngxux-camera-capture/src",
       "projectType": "library",
@@ -803,6 +803,41 @@
             "tsConfig": [
               "projects/ngxux-camera-capture/tsconfig.lib.json",
               "projects/ngxux-camera-capture/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngxux-file-uploader": {
+      "root": "projects/ngxux-file-uploader",
+      "sourceRoot": "projects/ngxux-file-uploader/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngxux-file-uploader/tsconfig.lib.json",
+            "project": "projects/ngxux-file-uploader/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngxux-file-uploader/src/test.ts",
+            "tsConfig": "projects/ngxux-file-uploader/tsconfig.spec.json",
+            "karmaConfig": "projects/ngxux-file-uploader/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngxux-file-uploader/tsconfig.lib.json",
+              "projects/ngxux-file-uploader/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

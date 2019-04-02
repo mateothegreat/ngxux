@@ -4,11 +4,12 @@ import { MatSidenavModule }              from '@angular/material';
 import { BrowserModule }                 from '@angular/platform-browser';
 import { BrowserAnimationsModule }       from '@angular/platform-browser/animations';
 import { RouterModule }                  from '@angular/router';
+import { ToastrModule }                  from 'ngx-toastr';
 import { WebcamModule }                  from 'ngx-webcam';
 import { NgxuxCameraCaptureModule }      from '../../projects/ngxux-camera-capture/src/lib/ngxux-camera-capture.module';
-import { HttpErrorInterceptor }          from '../../projects/ngxux-common/src/lib/HttpErrorInterceptor';
 import { JwtInterceptor }                from '../../projects/ngxux-common/src/lib/JwtInterceptor';
 import { NgxuxDetailsDialogModule }      from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog.module';
+import { NgxuxFileUploaderModule }       from '../../projects/ngxux-file-uploader/src/lib/ngxux-file-uploader.module';
 import { NgxuxMatDialogModule }          from '../../projects/ngxux-mat-dialog/src/lib/ngxux-mat-dialog.module';
 import { NgxuxMatHeaderNavModule }       from '../../projects/ngxux-mat-header-nav/src/lib/ngxux-mat-header-nav.module';
 import { NgxuxMatLoginModule }           from '../../projects/ngxux-mat-login/src/lib/ngxux-mat-login.module';
@@ -67,7 +68,18 @@ import { TestWidgetComponent } from './test-widget/test-widget.component';
         })),
 
         WebcamModule,
-        NgxuxCameraCaptureModule
+        NgxuxCameraCaptureModule,
+        NgxuxFileUploaderModule,
+        ToastrModule.forRoot({
+
+            timeOut: 5000,
+            positionClass: 'toast-bottom-right',
+            preventDuplicates: true,
+            progressBar: true,
+            enableHtml: true,
+            closeButton: true
+
+        }),
 
     ],
 
@@ -75,11 +87,11 @@ import { TestWidgetComponent } from './test-widget/test-widget.component';
 
         {
 
-            provide: HTTP_INTERCEPTORS,
-            useClass: HttpErrorInterceptor,
-            multi: true,
-
-        }, {
+            //     provide: HTTP_INTERCEPTORS,
+            //     useClass: HttpErrorInterceptor,
+            //     multi: true,
+            //
+            // }, {
 
             provide: HTTP_INTERCEPTORS,
             useClass: JwtInterceptor,

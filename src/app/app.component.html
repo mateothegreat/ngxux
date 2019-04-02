@@ -46,6 +46,22 @@
 
                 <!--</div>-->
 
+                <div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+                    Just drag and drop files here
+                </div>
+
+                <ngxux-file-uploader #fileUploadQueue
+                                     [fileAlias]="'file'"
+                                     [httpRequestHeaders]="headers"
+                                     [httpUrl]="uploadUrl"
+                                     multiple>
+
+                    <ngxux-file-upload [file]="file" [id]="i"
+                                       *ngFor="let file of fileUploadQueue.files; let i = index"></ngxux-file-upload>
+
+                </ngxux-file-uploader>
+
+
             </div>
 
         </mat-drawer-content>
