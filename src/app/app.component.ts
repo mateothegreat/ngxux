@@ -1,13 +1,14 @@
-import { Component, OnInit }              from '@angular/core';
-import { PageEvent }                      from '@angular/material';
-import { NgxuxDetailsDialogDataService }  from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog-data.service';
-import { NgxuxDetailsDialogService }      from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog.service';
-import { NgxuxMatDialogService }          from '../../projects/ngxux-mat-dialog/src/lib/ngxux-mat-dialog.service';
-import { TableColumn }                    from '../../projects/ngxux-mat-table/src/lib/table-column';
-import { NgxuxMatToolbarItem }            from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar-item';
-import { NgxuxMatToolbarService }         from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar.service';
-import { NgxuxMatVerticalToolbarItem }    from '../../projects/ngxux-mat-vertical-toolbar/src/lib/ngxux-mat-vertical-toolbar-item';
-import { NgxuxMatVerticalToolbarService } from '../../projects/ngxux-mat-vertical-toolbar/src/lib/ngxux-mat-vertical-toolbar.service';
+import { Component, OnInit }               from '@angular/core';
+import { PageEvent }                       from '@angular/material';
+import { NgxuxCameraCaptureDialogService } from '../../projects/ngxux-camera-capture/src/lib/ngxux-camera-capture-dialog.service';
+import { NgxuxDetailsDialogDataService }   from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog-data.service';
+import { NgxuxDetailsDialogService }       from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog.service';
+import { NgxuxMatDialogService }           from '../../projects/ngxux-mat-dialog/src/lib/ngxux-mat-dialog.service';
+import { TableColumn }                     from '../../projects/ngxux-mat-table/src/lib/table-column';
+import { NgxuxMatToolbarItem }             from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar-item';
+import { NgxuxMatToolbarService }          from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar.service';
+import { NgxuxMatVerticalToolbarItem }     from '../../projects/ngxux-mat-vertical-toolbar/src/lib/ngxux-mat-vertical-toolbar-item';
+import { NgxuxMatVerticalToolbarService }  from '../../projects/ngxux-mat-vertical-toolbar/src/lib/ngxux-mat-vertical-toolbar.service';
 
 @Component({
     selector: 'app-root',
@@ -59,7 +60,8 @@ export class AppComponent implements OnInit {
                        private ngxuxMatDialogService: NgxuxMatDialogService,
                        private ngxuxMatToolbarService: NgxuxMatToolbarService,
                        private ngxuxDetailsDialogService: NgxuxDetailsDialogService,
-                       private ngxuxDetailsDialogDataService: NgxuxDetailsDialogDataService) {
+                       private ngxuxDetailsDialogDataService: NgxuxDetailsDialogDataService,
+                       private ngxuxCameraCaptureDialogService: NgxuxCameraCaptureDialogService) {
 
         ngxuxMatToolbarService.menuItems = [
 
@@ -113,6 +115,8 @@ export class AppComponent implements OnInit {
         //     this.ngxuxDetailsDialogService.close();
         //
         // });
+
+        this.ngxuxCameraCaptureDialogService.open();
 
     }
 

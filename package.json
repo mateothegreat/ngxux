@@ -28,6 +28,7 @@
     "@swimlane/ngx-datatable": "^14.0.0",
     "@types/jest": "^23.3.13",
     "core-js": "^2.6.2",
+    "ngx-webcam": "^0.2.2",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.4.0",
     "zone.js": "~0.8.29"

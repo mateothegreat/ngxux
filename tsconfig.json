@@ -120,6 +120,12 @@
       ],
       "ngxux-section-header/*": [
         "dist/ngxux-section-header/*"
+      ],
+      "ngxux-camera-capture": [
+        "dist/ngxux-camera-capture"
+      ],
+      "ngxux-camera-capture/*": [
+        "dist/ngxux-camera-capture/*"
       ]
     }
   }

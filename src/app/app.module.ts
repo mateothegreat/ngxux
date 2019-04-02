@@ -4,6 +4,8 @@ import { MatSidenavModule }              from '@angular/material';
 import { BrowserModule }                 from '@angular/platform-browser';
 import { BrowserAnimationsModule }       from '@angular/platform-browser/animations';
 import { RouterModule }                  from '@angular/router';
+import { WebcamModule }                  from 'ngx-webcam';
+import { NgxuxCameraCaptureModule }      from '../../projects/ngxux-camera-capture/src/lib/ngxux-camera-capture.module';
 import { HttpErrorInterceptor }          from '../../projects/ngxux-common/src/lib/HttpErrorInterceptor';
 import { JwtInterceptor }                from '../../projects/ngxux-common/src/lib/JwtInterceptor';
 import { NgxuxDetailsDialogModule }      from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog.module';
@@ -62,7 +64,10 @@ import { TestWidgetComponent } from './test-widget/test-widget.component';
             API_BASE: environment.API_BASE,
             ROUTE: 'settings/users'
 
-        }))
+        })),
+
+        WebcamModule,
+        NgxuxCameraCaptureModule
 
     ],
 
