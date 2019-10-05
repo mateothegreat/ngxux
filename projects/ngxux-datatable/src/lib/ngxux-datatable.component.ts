@@ -87,6 +87,23 @@ export class NgxuxDatatableComponent<T> {
 
     }
 
+    public setRows(rows: Array<T>): void {
+
+        this.page = new Page();
+        this.page.count = rows.length || 0;
+        this.page.limit = 1000;
+        this.page.totalPages = 1;
+        this.page.offset = 1;
+        this.rows = rows;
+
+        if (this.page.count === 0) {
+
+            this.messages.emptyMessage = 'No data';
+
+        }
+
+    }
+
     public onSelect({ selected }) {
 
         // console.log('Select Event', selected, this);

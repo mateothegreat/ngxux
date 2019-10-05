@@ -33,7 +33,10 @@ import { NgxuxMatVerticalToolbarService } from './ngxux-mat-vertical-toolbar.ser
                      [matTooltip]="item.tooltip"
                      [routerLink]="[ item.path ]">
 
-                    <mat-icon class="icon">{{ item.icon }}</mat-icon>
+
+                    <i *ngIf="item.icon.match('fa')" [class]="item.icon"></i>
+
+                    <mat-icon *ngIf="!item.icon.match('fa')" class="icon">{{ item.icon }}</mat-icon>
 
                 </div>
 

@@ -1,103 +1,102 @@
-import { HttpHeaders, HttpParams }                                             from '@angular/common/http';
-import { Component, ContentChildren, forwardRef, Input, OnDestroy, QueryList } from '@angular/core';
-import { merge, Observable, Subscription }                                     from 'rxjs';
-import { startWith }                                                           from 'rxjs/operators';
-import { NgxuxFileUploadComponent }                                            from './ngxux-file-upload/ngxux-file-upload.component';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup }                                 from '@angular/forms';
+import { Subscription }                                           from 'rxjs';
+import { NgxuxFileUploaderAccepts }                               from './ngxux-file-uploader-accepts';
+import { NgxuxFileUploaderConfigService }                         from './ngxux-file-uploader-config-service';
+import { NgxuxFileUploaderUtilityService }                        from './ngxux-file-uploader-utility.service';
+import { NgxuxFileUploaderService }                               from './ngxux-file-uploader.service';
 
 @Component({
     selector: 'ngxux-file-uploader',
     template: `
 
-        <ng-content></ng-content>
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
-        <br>
+            <input type="file"
+                   name="file"
+                   id="file"
+                   (change)="onFileChange($event)"
+                   [accept]="_accept"
+                   class="inputfile">
 
-        <button mat-raised-button color="warn" *ngIf="files.length > 0" (click)="removeAll()">Remove All</button>
-        <button mat-raised-button color="primary" *ngIf="files.length > 0" (click)="uploadAll()">Upload All</button>
+            <label for="file"
+                   [style.background-color]="backgroundColor">{{ label }}</label>
 
+        </form>
     `,
 
     styleUrls: [ './ngxux-file-uploader.component.scss' ]
 
 })
-export class NgxuxFileUploaderComponent implements OnDestroy {
+export class NgxuxFileUploaderComponent implements OnInit {
 
-    @ContentChildren(forwardRef(() => NgxuxFileUploadComponent)) fileUploads: QueryList<NgxuxFileUploadComponent>;
+    @Input() public urlBase: string;
+    @Input() public label: string = 'Upload a file..';
+    @Input() public backgroundColor: string = '#999';
+    @Input() public accept: Array<string> | string = NgxuxFileUploaderAccepts.ANY;
 
-    @Input() public httpUrl: string;
-    @Input() public httpRequestHeaders: HttpHeaders | { [ header: string ]: string | string[]; } = new HttpHeaders();
-    @Input() public httpRequestParams: HttpParams | { [ param: string ]: string | string[]; } = new HttpParams();
-    @Input() public fileAlias: string = 'file';
+    @Output() public onUpload: EventEmitter<any> = new EventEmitter();
 
-    /** Subscription to remove changes in files. */
-    private _fileRemoveSubscription: Subscription | null;
+    public formGroup: FormGroup = new FormGroup({
 
-    /** Subscription to changes in the files. */
-    private _changeSubscription: Subscription;
+        file: new FormControl('')
 
-    /** Combined stream of all of the file upload remove change events. */
-    get fileUploadRemoveEvents(): Observable<NgxuxFileUploadComponent> {
+    });
 
-        return merge(...this.fileUploads.map(fileUpload => fileUpload.removeEvent));
+    private file: File;
+    private subscription: Subscription;
+
+    public constructor(@Inject(NgxuxFileUploaderConfigService) private config,
+                       private fileUploaderUtilityService: NgxuxFileUploaderUtilityService,
+                       private uploaderService: NgxuxFileUploaderService) {
 
     }
 
-    public files: Array<any> = [];
+    public get _accept(): string {
 
-    public ngAfterViewInit() {
+        return Array.isArray(this.accept) ? this.accept.join(',') : this.accept;
 
-        // When the list changes, re-subscribe
-        this._changeSubscription = this.fileUploads.changes.pipe(startWith(null)).subscribe(() => {
+    }
 
-            if (this._fileRemoveSubscription) {
+    public ngOnInit(): void {
 
-                this._fileRemoveSubscription.unsubscribe();
+        this.uploaderService.urlBase = this.urlBase;
 
-            }
+    }
 
-            this._listenTofileRemoved();
+    public onSubmit(): void {
+
+        this.fileUploaderUtilityService.read(this.file).subscribe(reader => {
+
+            this.subscription = this.uploaderService.upload({
+
+                filename: this.file.name,
+                bytes: this.file.size,
+                type: this.file.type,
+                data: reader.result.toString().replace(/^data:image\/\w+;base64,/, '')
+
+            }).subscribe((res) => {
+
+                this.onUpload.emit(res);
+
+            });
 
         });
 
     }
 
-    private _listenTofileRemoved(): void {
+    public onFileChange(e: any): void {
 
-        this._fileRemoveSubscription = this.fileUploadRemoveEvents.subscribe((event: NgxuxFileUploadComponent) => {
+        // @ts-ignore
+        if (event.target.files.length > 0) {
 
-            this.files.splice(event.id, 1);
+            // @ts-ignore
+            this.file = event.target.files[ 0 ];
 
-        });
+            // @ts-ignore
+            this.formGroup.get('file').setValue(event.target.files[ 0 ]);
 
-    }
-
-    private add(file: any) {
-
-        this.files.push(file);
-
-    }
-
-    public uploadAll() {
-
-        this.fileUploads.forEach((fileUpload) => {
-
-            fileUpload.upload();
-
-        });
-
-    }
-
-    public removeAll() {
-
-        this.files.splice(0, this.files.length);
-
-    }
-
-    public ngOnDestroy() {
-
-        if (this.files) {
-
-            this.removeAll();
+            this.onSubmit();
 
         }
 

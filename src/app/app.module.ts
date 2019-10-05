@@ -6,10 +6,15 @@ import { BrowserAnimationsModule }       from '@angular/platform-browser/animati
 import { RouterModule }                  from '@angular/router';
 import { ToastrModule }                  from 'ngx-toastr';
 import { WebcamModule }                  from 'ngx-webcam';
+import { NgxuxCameraCaptureConfig }      from '../../projects/ngxux-camera-capture/src/lib/ngxux-camera-capture-config';
 import { NgxuxCameraCaptureModule }      from '../../projects/ngxux-camera-capture/src/lib/ngxux-camera-capture.module';
 import { JwtInterceptor }                from '../../projects/ngxux-common/src/lib/JwtInterceptor';
 import { NgxuxDetailsDialogModule }      from '../../projects/ngxux-details-dialog/src/lib/ngxux-details-dialog.module';
+import { NgxuxFileManagementConfig }     from '../../projects/ngxux-file-management/src/lib/ngxux-file-management-config';
+import { NgxuxFileManagementModule }     from '../../projects/ngxux-file-management/src/lib/ngxux-file-management.module';
+import { NgxuxFileUploaderConfig }       from '../../projects/ngxux-file-uploader/src/lib/ngxux-file-uploader-config';
 import { NgxuxFileUploaderModule }       from '../../projects/ngxux-file-uploader/src/lib/ngxux-file-uploader.module';
+import { NgxuxMailchimpModule }          from '../../projects/ngxux-mailchimp/src/lib/ngxux-mailchimp.module';
 import { NgxuxMatDialogModule }          from '../../projects/ngxux-mat-dialog/src/lib/ngxux-mat-dialog.module';
 import { NgxuxMatHeaderNavModule }       from '../../projects/ngxux-mat-header-nav/src/lib/ngxux-mat-header-nav.module';
 import { NgxuxMatLoginModule }           from '../../projects/ngxux-mat-login/src/lib/ngxux-mat-login.module';
@@ -19,6 +24,7 @@ import { NgxuxMatVerticalToolbarModule } from '../../projects/ngxux-mat-vertical
 import { NgxuxSectionHeaderModule }      from '../../projects/ngxux-section-header/src/lib/ngxux-section-header.module';
 import { NgxuxUserManagementConfig }     from '../../projects/ngxux-user-management/src/lib/ngxux-user-management-config';
 import { NgxuxUserManagementModule }     from '../../projects/ngxux-user-management/src/lib/ngxux-user-management.module';
+import { NgxuxWindowReceiverModule }     from '../../projects/ngxux-window-receiver/src/lib/ngxux-window-receiver.module';
 import { environment }                   from '../environments/environment';
 
 import { AppComponent }        from './app.component';
@@ -53,6 +59,7 @@ import { TestWidgetComponent } from './test-widget/test-widget.component';
         MatSidenavModule,
 
         NgxuxDetailsDialogModule,
+        NgxuxMailchimpModule,
         NgxuxMatDialogModule,
         NgxuxMatHeaderNavModule,
         NgxuxMatLoginModule,
@@ -66,10 +73,28 @@ import { TestWidgetComponent } from './test-widget/test-widget.component';
             ROUTE: 'settings/users'
 
         })),
+        NgxuxFileUploaderModule.forRoot(new NgxuxFileUploaderConfig({
 
+            API_BASE: environment.API_BASE,
+            ROUTE: '/partners/whitelabel/logo/upload',
+            TOKEN: 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290QHN0cmVhbW52ci5jb20iLCJleHAiOjE1NTg3MTI3OTJ9.PiD1vlprbMRpFUqACkJXfj-nFovjMGjrS18FLorzE_Ju1wS2hzNc6rYyP3mCB4RsUPcBPGVRKypzyhvLDHRj9Q'
+
+        })),
+        NgxuxFileManagementModule.forRoot(new NgxuxFileManagementConfig({
+
+            API_BASE: environment.API_BASE,
+            ROUTE: 'settings/users'
+
+        })),
+        NgxuxWindowReceiverModule,
         WebcamModule,
-        NgxuxCameraCaptureModule,
-        NgxuxFileUploaderModule,
+        NgxuxCameraCaptureModule.forRoot(new NgxuxCameraCaptureConfig({
+
+            API_BASE: environment.API_BASE,
+            ROUTE: 'settings/users'
+
+        })),
+        // NgxuxFileUploaderModule,
         ToastrModule.forRoot({
 
             timeOut: 5000,

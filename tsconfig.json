@@ -132,6 +132,36 @@
       ],
       "ngxux-file-uploader/*": [
         "dist/ngxux-file-uploader/*"
+      ],
+      "ngxux-file-management": [
+        "dist/ngxux-file-management"
+      ],
+      "ngxux-file-management/*": [
+        "dist/ngxux-file-management/*"
+      ],
+      "ngxux-mat-dialog-form-builder": [
+        "dist/ngxux-mat-dialog-form-builder"
+      ],
+      "ngxux-mat-dialog-form-builder/*": [
+        "dist/ngxux-mat-dialog-form-builder/*"
+      ],
+      "ngxux-file-upload": [
+        "dist/ngxux-file-upload"
+      ],
+      "ngxux-file-upload/*": [
+        "dist/ngxux-file-upload/*"
+      ],
+      "ngxux-mailchimp": [
+        "dist/ngxux-mailchimp"
+      ],
+      "ngxux-mailchimp/*": [
+        "dist/ngxux-mailchimp/*"
+      ],
+      "ngxux-window-receiver": [
+        "dist/ngxux-window-receiver"
+      ],
+      "ngxux-window-receiver/*": [
+        "dist/ngxux-window-receiver/*"
       ]
     }
   }

@@ -5,9 +5,9 @@
     <mat-drawer-container>
 
         <mat-drawer #drawer
-                    opened="opened"
                     class="mat-elevation-z2"
-                    mode="side">
+                    mode="side"
+                    opened="opened">
 
             <ngxux-mat-vertical-toolbar></ngxux-mat-vertical-toolbar>
 
@@ -16,51 +16,60 @@
         <mat-drawer-content>
 
             <ngxux-mat-toolbar class="mat-elevation-z4"
-                               title="ACME, Inc."
-                               subtitle="Administration"></ngxux-mat-toolbar>
+                               subtitle="Administration"
+                               title="ACME, Inc."></ngxux-mat-toolbar>
 
 
-            <ngxux-section-header title="Some Section Title"
-                                  description="adsf asd fa sd fasdfasdf"
-                                  [buttons]="[
+            <div class="wrapper">
+
+                <ngxux-section-header [buttons]="[
                                   { key: 'somekey', label: 'some label', color: 'warn' },
                                   { key: 'somekey', label: 'some label', color: 'primary' }
-                                  ]"></ngxux-section-header>
+                                  ]"
+                                      description="This is a section description. You can change me anytime using a service or attribute."
+                                      title="Some Section Title"></ngxux-section-header>
 
-            <div class="content">
+                <div class="content">
 
-                <router-outlet></router-outlet>
+                    <router-outlet></router-outlet>
 
-                <!--<div class="table mat-elevation-z5">-->
+                    <!--<div class="table mat-elevation-z5">-->
 
-                <!--<ngxux-mat-table title="My Table"-->
-                <!--[headerShow]="true"-->
-                <!--[columns]="columns"-->
-                <!--[searchShow]="true"-->
-                <!--[addShow]="true"-->
-                <!--[removeShow]="true"-->
-                <!--[headerSticky]="true"-->
-                <!--(rowClick)="rowClicked($event)"-->
-                <!--(pageNavigationClick)="onPageNavigationClick($event)"-->
-                <!--[data]="data"></ngxux-mat-table>-->
+                    <!--<ngxux-mat-table title="My Table"-->
+                    <!--[headerShow]="true"-->
+                    <!--[columns]="columns"-->
+                    <!--[searchShow]="true"-->
+                    <!--[addShow]="true"-->
+                    <!--[removeShow]="true"-->
+                    <!--[headerSticky]="true"-->
+                    <!--(rowClick)="rowClicked($event)"-->
+                    <!--(pageNavigationClick)="onPageNavigationClick($event)"-->
+                    <!--[data]="data"></ngxux-mat-table>-->
 
-                <!--</div>-->
+                    <!--</div>-->
 
-                <div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
-                    Just drag and drop files here
+                    <!--<div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">-->
+                    <!--Just drag and drop files here-->
+                    <!--</div>-->
+
+                    <!--<ngxux-file-uploader #fileUploadQueue-->
+                    <!--[fileAlias]="'file'"-->
+                    <!--[httpRequestHeaders]="headers"-->
+                    <!--[httpUrl]="uploadUrl"-->
+                    <!--multiple>-->
+
+                    <!--<ngxux-file-upload *ngFor="let file of fileUploadQueue.files; let i = index" [file]="file"-->
+                    <!--[id]="i"></ngxux-file-upload>-->
+
+                    <!--</ngxux-file-uploader>-->
+
+                    <!--<ngxux-file-management-table showCameraButton="true"-->
+                    <!--showUploadButton="true"></ngxux-file-management-table>-->
+
+                    <ngxux-file-uploader backgroundColor="rebeccapurple"
+                                         label="Upload File.."></ngxux-file-uploader>
+
                 </div>
-
-                <ngxux-file-uploader #fileUploadQueue
-                                     [fileAlias]="'file'"
-                                     [httpRequestHeaders]="headers"
-                                     [httpUrl]="uploadUrl"
-                                     multiple>
-
-                    <ngxux-file-upload [file]="file" [id]="i"
-                                       *ngFor="let file of fileUploadQueue.files; let i = index"></ngxux-file-upload>
-
-                </ngxux-file-uploader>
-
 
             </div>
 

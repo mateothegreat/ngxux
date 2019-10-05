@@ -10,6 +10,7 @@ import { NgxuxMatToolbarItem }             from '../../projects/ngxux-mat-toolba
 import { NgxuxMatToolbarService }          from '../../projects/ngxux-mat-toolbar/src/lib/ngxux-mat-toolbar.service';
 import { NgxuxMatVerticalToolbarItem }     from '../../projects/ngxux-mat-vertical-toolbar/src/lib/ngxux-mat-vertical-toolbar-item';
 import { NgxuxMatVerticalToolbarService }  from '../../projects/ngxux-mat-vertical-toolbar/src/lib/ngxux-mat-vertical-toolbar.service';
+import { NgxuxWindowReceiverService }      from '../../projects/ngxux-window-receiver/src/lib/ngxux-window-receiver.service';
 
 @Component({
     selector: 'app-root',
@@ -70,7 +71,18 @@ export class AppComponent implements OnInit {
                        private ngxuxMatToolbarService: NgxuxMatToolbarService,
                        private ngxuxDetailsDialogService: NgxuxDetailsDialogService,
                        private ngxuxDetailsDialogDataService: NgxuxDetailsDialogDataService,
-                       private ngxuxCameraCaptureDialogService: NgxuxCameraCaptureDialogService) {
+                       private ngxuxCameraCaptureDialogService: NgxuxCameraCaptureDialogService,
+                       private windowReceiverService: NgxuxWindowReceiverService) {
+
+        this.windowReceiverService.add({
+
+            methodName: 'test1'
+
+        }).subscribe(args => {
+
+            console.log('asdf', args);
+
+        });
 
         ngxuxMatToolbarService.menuItems = [
 
@@ -125,7 +137,7 @@ export class AppComponent implements OnInit {
         //
         // });
 
-        this.ngxuxCameraCaptureDialogService.open();
+        // this.ngxuxCameraCaptureDialogService.open();
 
     }
 
