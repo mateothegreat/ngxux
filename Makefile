@@ -13,7 +13,7 @@ version-patch:
 
 	cd projects/$(PROJECT) && npm version patch
 
-publish:
+publish: build
 
 	cd dist/$(PROJECT) && npm publish --access public
 
