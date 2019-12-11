@@ -162,6 +162,18 @@
       ],
       "ngxux-window-receiver/*": [
         "dist/ngxux-window-receiver/*"
+      ],
+      "image-editor": [
+        "dist/image-editor"
+      ],
+      "image-editor/*": [
+        "dist/image-editor/*"
+      ],
+      "ngxux-autocomplete": [
+        "dist/ngxux-autocomplete"
+      ],
+      "ngxux-autocomplete/*": [
+        "dist/ngxux-autocomplete/*"
       ]
     }
   }
